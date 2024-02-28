@@ -1,8 +1,6 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,6 +10,14 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1>HomePage!</h1>
+        <ul>
+          <li>
+            <Link href="/SunRays" className={styles.link}>
+              to Sun Rays
+            </Link>
+          </li>
+          <li>to be continue...</li>
+        </ul>
       </main>
     </>
   );
