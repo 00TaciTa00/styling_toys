@@ -16,6 +16,11 @@ export default function Home() {
               to Sun Rays
             </Link>
           </li>
+          <li>
+            <Link href="/WebRTC" className={styles.link}>
+              to WebRTC
+            </Link>
+          </li>
           <li>to be continue...</li>
         </ul>
       </main>
