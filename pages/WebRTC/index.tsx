@@ -1,4 +1,8 @@
 import { useState, useEffect } from "react";
+import { Socket, io } from "socket.io-client";
+import Peer from "simple-peer";
+import styles from "./WebRTC.module.css";
+import { useRouter } from "next/router";
 import io from "socket.io-client";
 import Peer from "simple-peer";
 import styles from "./WebRTC.module.css";
@@ -8,11 +12,15 @@ interface PeerData {
   peer: Peer.Instance;
 }
 
+type sockeType = Socket;
+
 export default function WebRTC() {
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [peers, setPeers] = useState<PeerData[]>([]);
-  const [socket, setSocket] = useState(null);
+  const [socket, setSocket] = useState<sockeType | null>(null);
   const [videoCallActive, setVideoCallActive] = useState<boolean>(false);
+  const router = useRouter();
+
 
   useEffect(() => {
     const newSocket = io();
@@ -107,7 +115,10 @@ export default function WebRTC() {
 
   return (
     <div>
-      <h1>WebRTC Video Chat</h1>
+      <div className={styles.title}>
+        <h1>WebRTC Video Chat</h1>
+        <button onClick={() => router.push("/")}>To main</button>
+      </div>
       <div className={styles.videoGrid}>
         <div className={styles.myVideo}>
           {stream && (
