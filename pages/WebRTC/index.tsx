@@ -3,6 +3,10 @@ import { Socket, io } from "socket.io-client";
 import Peer from "simple-peer";
 import styles from "./WebRTC.module.css";
 import { useRouter } from "next/router";
+import io from "socket.io-client";
+import Peer from "simple-peer";
+import styles from "./WebRTC.module.css";
+
 interface PeerData {
   peerId: string;
   peer: Peer.Instance;
@@ -16,6 +20,7 @@ export default function WebRTC() {
   const [socket, setSocket] = useState<sockeType | null>(null);
   const [videoCallActive, setVideoCallActive] = useState<boolean>(false);
   const router = useRouter();
+
 
   useEffect(() => {
     const newSocket = io();
