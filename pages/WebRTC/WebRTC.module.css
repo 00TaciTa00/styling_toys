@@ -1,3 +1,21 @@
+.title {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.title button {
+  padding: 4px;
+  margin-top: 12px;
+  margin-bottom: 2px;
+  border: none;
+  border-radius: 2px;
+}
+
+.title button:hover {
+  background-color: lightgray;
+}
+
 .videoGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
