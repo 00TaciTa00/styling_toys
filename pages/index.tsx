@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Styling Toys</title>
+        <title>Styling Toys!</title>
       </Head>
       <main className={styles.main}>
         <h1>HomePage!</h1>
